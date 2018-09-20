@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 exclVat = unitPrice * numberOfUnits;
                 output1.setText(String.valueOf(decimal.format(exclVat)));
 
-                // We round the number if it has 0 after decimal
+                // Rounds a number if it has 0 after decimal
                 if (exclVat % 1 == 0) output1.setText(String.valueOf(Math.round(exclVat)));
 
                 output2.setText("");
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
 
-                vat = vatPercent / (unitPrice * numberOfUnits) * 100;
+                vat = vatPercent * (unitPrice * numberOfUnits) / 100;
                 inclVat = (unitPrice * numberOfUnits) + vat;
 
                 output1.setText("");
